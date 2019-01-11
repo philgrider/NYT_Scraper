@@ -1,8 +1,14 @@
+require("dotenv").config();
 var db = require("../models");
 var mongoose = require("mongoose");
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/nytarticles", { useNewUrlParser: true });
+var databaseUri = "mongodb://localhost/nytarticles";
+if (process.env.MONGODB_URI){
+  mongoose.connect(process.env.MONGODB_URI);
+}else {
+  mongoose.connect(databaseUri,{ useNewUrlParser: true });
+}
 
 module.exports = function(app) {
   // Load index page
