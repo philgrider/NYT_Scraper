@@ -106,3 +106,11 @@ textarea {
     resize: none;
     width: 100%;
 }
+.note.list-group-item .btn {
+    position: relative;
+    bottom: 10px;
+}
+.bootbox-body .btn {
+    float: right;
+    margin: 5px;
+}

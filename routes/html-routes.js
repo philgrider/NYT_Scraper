@@ -32,22 +32,7 @@ module.exports = function(app) {
           console.log(err);
         });
       });
-      app.put("/api/notes/:id", function(req, res) {
-        console.log("modal ID " + req.params.id)
-        db.Article.find({_id: req.params.id})
-        .populate("note")
-        .then(function(noteDb) {
-          selectNotesDB = JSON.stringify(noteDb);
-          // console.log("Note DB: " + noteDb[0].note);
-          res.render("partials/modal" ,{
-            note: noteDb[0].note
-          })
-        })
-          .catch(function(err) {
-            // If an error occurred, log it
-            console.log(err);
-          });
-        });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

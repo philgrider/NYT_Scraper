@@ -1,29 +1,22 @@
 <!-- Modal -->
-<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade show" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-body"><button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"
-      style="margin-top: -10px;">×</button>
-    <div class="bootbox-body">
-      <div class="container-fluid text-center">
-        <h4 id="articleNoteID">Notes For Article: </h4>
-        <hr>
-        <ul class="list-group note-container">
-          {{!-- {{#if notes}} --}}
-          {{log this}}
-          {{#each note as |item|}}
-          <li class="list-group-item note">{{item.1.text}}<button class="btn btn-danger note-delete" id="{{item.0.text}}">x</button></li>
-          {{/each}}
-          {{!-- {{/if}} --}}
-          {{#unless note}}
-          <li class="list-group-item">No notes for this article yet.</li>
-          {{/unless}}
-        </ul>
-        <textarea placeholder="New Note" rows="4" cols="60"></textarea>
-        <button class="btn btn-success save">Save Note</button>
+    <div class="modal-content">
+      <div class="modal-body"><button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"
+          style="margin-top: -10px;">×</button>
+        <div class="bootbox-body">
+          <div class="container-fluid text-center">
+            <h4 id="articleNoteID">Notes For Article: </h4>
+            <ul class="list-group note-container">
+              <li class="list-group-item note">
+                <button class="btn btn-danger note-delete" id="">x</button>
+              </li>
+            </ul>
+            <textarea placeholder="New Note" id="note-text" rows="4" cols="60"></textarea>
+            <button class="btn btn-success save">Save Note</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   </div>
 </div>
